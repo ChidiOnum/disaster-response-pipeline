@@ -9,10 +9,10 @@
 * [Setup](#setup)
 
 ## Installation
-Project is created with:
-* Lorem version: 12.3
-* Ipsum version: 2.33
-* Ament library version: 999
+Project is created using:
+* Python 3
+* Pandas package
+* NLTK (Natural Language Processing Tool Kit)
 
 ## Project Motivation
 In support of disaster relief efforts, I have created in this project, data pipelines which integrate NLP and ML models to analyze and categorize messages sent during disasters for insights.

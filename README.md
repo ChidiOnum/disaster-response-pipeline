@@ -11,9 +11,12 @@
 ## Installation
 Project is created using:
 * Python 3
-* Pandas package
-* Numpy package
+* Pandas
+* Numpy
+* Scikit-learn
 * NLTK
+* Pickle
+* flask
 
 ## Project Motivation
 In support of disaster relief efforts, I have created in this project, data pipelines which integrate NLP and ML models to analyze and categorize messages sent during disasters for insights.

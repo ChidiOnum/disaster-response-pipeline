@@ -41,8 +41,8 @@ In support of disaster relief efforts, I have created in this project, data pipe
 
 
 ## Authors, Acknowledgements
-Udacity: for the templates and starter codes
-Figure Eight: for the data used for the project
+* Udacity: for the templates and starter codes.
+* Figure Eight: for the data used for the project.
 
 ## Setup
 ### Instructions:

@@ -12,7 +12,8 @@
 Project is created using:
 * Python 3
 * Pandas package
-* NLTK (Natural Language Processing Tool Kit)
+* Numpy package
+* NLTK
 
 ## Project Motivation
 In support of disaster relief efforts, I have created in this project, data pipelines which integrate NLP and ML models to analyze and categorize messages sent during disasters for insights.
@@ -20,7 +21,7 @@ In support of disaster relief efforts, I have created in this project, data pipe
 ## File Description
 1. Data Folder
 * process_data.py: Pipeline script to extract, transform and load data into a disaster_msg SQLite database
-* disaster_msg.db: output of process_data.py
+* DisasterResponse.db: output of process_data.py
 * disaster_messages.csv: input dataset containing messages sent by people during disasters.
 * disaster_categories.csv: input dataset containing disaster message categories.
 

@@ -1,3 +1,6 @@
+#*****************************************************************************
+# import libraries
+#*****************************************************************************
 import json
 import plotly
 import pandas as pd
@@ -8,11 +11,16 @@ from nltk.tokenize import word_tokenize
 from flask import Flask
 from flask import render_template, request, jsonify
 from plotly.graph_objs import Bar
-from sklearn.externals import joblib
+#from sklearn.externals import joblib
+import joblib
 from sqlalchemy import create_engine
 
 
 app = Flask(__name__)
+
+#*****************************************************************************
+# defining functions
+#*****************************************************************************
 
 def tokenize(text):
     tokens = word_tokenize(text)
@@ -25,6 +33,9 @@ def tokenize(text):
 
     return clean_tokens
 
+#*****************************************************************************
+# oad data and model
+#*****************************************************************************
 # load data
 engine = create_engine('sqlite:///../data/YourDatabaseName.db')
 df = pd.read_sql_table('YourTableName', engine)

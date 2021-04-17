@@ -39,6 +39,7 @@ In support of disaster relief efforts, I have created in this project, data pipe
 
 
 ## Results
+The following outcomes can be found within [this repository] https://github.com/ChidiOnum/disaster-response-pipeline.git
 * ETL Pipeline (process_data.py): developed to read disaster messages and message categories from the associated csv files: disaster.csv; disaster_categories.csv
 * Machine Learning Pipeline (train_classifier.py): developed to use messages data to train a classifier to conduct a multi-output classification on disaster messages into the 36 categories.
 * Flask App: Created to visualize results.

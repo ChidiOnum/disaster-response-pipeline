@@ -4,7 +4,6 @@
 
 import sys
 import pandas as pd
-import numpy as np
 from sqlalchemy import create_engine
 
 #*****************************************************************************
@@ -60,26 +59,28 @@ def clean_data(df):
     # Concatenate both original and new categories dataframe
     df = pd.concat([df, categories], axis=1)
     df.drop_duplicates(subset='id', inplace=True)
+    df.drop(df[df['related'] ==2].index, inplace=True)
     
     return df
 
 
-def save_data(df, database_filename, table_name = "DisasterMessages"):
+def save_data(df, database_filepath, table_name = "DisasterMessages"):
     """
     Save df into sqlite db
     Input:
         df: cleaned dataframe
-        database_filename
+        database_filepath
         table_name = "DisasterMessages" default
     Output: 
         db (SQlite)
     """
-    engine = create_engine('sqlite:///' + database_filename)
-    df.to_sql(table_name, engine, index=False)
+    engine = create_engine('sqlite:///' + str(database_filepath))
+    df.to_sql(table_name, engine, index=False, if_exists = 'replace')
 
 
 
 def main():
+
     if len(sys.argv) == 4:
 
         messages_filepath, categories_filepath, database_filepath = sys.argv[1:]
@@ -103,6 +104,7 @@ def main():
               'to as the third argument. \n\nExample: python process_data.py '\
               'disaster_messages.csv disaster_categories.csv '\
               'DisasterResponse.db')
+
 
 #*****************************************************************************
 # load check

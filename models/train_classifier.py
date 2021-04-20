@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Wed Apr 14 05:33:31 2021
-
+Train Classifier Script
 @author: chidi
 """
 
@@ -52,7 +51,8 @@ def f1_pre_acc_evaluation (y_true, y_pred):
         class_dict = classification_report (output_dict = True, y_true = y_true.loc [:,col], y_pred = y_pred.loc [:,col])
 
         #converting from dictionary to dataframe
-        eval_df = pd.DataFrame (pd.DataFrame.from_dict (class_dict))
+        #eval_df = pd.DataFrame (pd.DataFrame.from_dict (class_dict))
+        eval_df = pd.DataFrame.from_dict (class_dict)
 
        # print (eval_df)
 
@@ -156,9 +156,11 @@ def save_model(model, model_filepath):
     Output:
         Pickled File: classifier.pkl    
     """
-    pickle.dump(model, open(model_filepath + 'classifier.pkl', 'wb'))
+    pickle.dump(model, open(model_filepath + '/classifier.pkl', 'wb'))
 
-def main():
+def main():    
+      
+       
         if len(sys.argv) == 3:
             database_filepath, model_filepath = sys.argv[1:]
             
@@ -185,7 +187,7 @@ def main():
                   'as the first argument and the filepath of the pickle file to '\
                   'save the model to as the second argument. \n\nExample: python '\
                   'train_classifier.py ../data/DisasterResponse.db classifier.pkl')
-
+     
 
 if __name__ == '__main__':
     main()
